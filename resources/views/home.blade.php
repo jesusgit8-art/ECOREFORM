@@ -66,16 +66,16 @@
             transform: scale(1.05);
         }
 
-        /* Transición suave para el cambio de color */
+        /* Estado inicial transparente (arriba) */
         #mainNav {
+            background-color: transparent;
             transition: background-color 0.3s ease, padding 0.3s ease;
         }
 
-        /* Color que tomará al hacer scroll */
+        /* Estado al bajar (fondo verde bosque sólido) */
         #mainNav.scrolled {
-            background-color: rgba(6, 64, 35, 0.95) !important;
-            /* Verde bosque oscuro */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background-color: #064023 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             padding-top: 0.75rem !important;
             padding-bottom: 0.75rem !important;
         }
@@ -117,6 +117,14 @@
             z-index: 5 !important;
             /* Siempre por encima del árbol */
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #contenido {
+            scroll-margin-top: 75px;
+        }
     </style>
 
 </head>
@@ -125,7 +133,7 @@
     <header class="hero-verde d-flex justify-content-center align-items-center text-center min-vh-100 position-relative overflow-hidden">
         <img src="{{  asset('/images/tree.png') }}" alt="Árbol de fondo" class="arbol">
         <!-- Navbar transparente con los 5 apartados del wireframe centrados -->
-        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-transparent py-4">
+        <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top py-4">
             <div class="container">
 
 
@@ -159,66 +167,121 @@
 
         <div class="capa-texto">
 
+            <p class="text-uppercase fw-bold mb-2" style="letter-spacing: 4px; color: #b7efc5; font-size: 0.9rem;">
+                CBTA No. 35 • EcoReform
+            </p>
+
             <h1 class="frame titlemain text-uppercase mb-3">TOMA EL CONTROL</h1>
 
-            <h2 class="frame subtitlemain text-uppercase mb-4 " style="color: #d8f3dc;"">PLANTA UN ÁRBOL</h2>
+            <h2 class="frame subtitlemain text-uppercase mb-4" style="color: #d8f3dc;">PLANTA UN ÁRBOL</h2>
+
+            <a href="#contenido" class="btn btn-outline-light rounded-pill px-4 py-2 mt-4 fw-semibold">
+                Conoce más ↓
+            </a>
 
         </div>
     </header>
 
     <br>
+    <main id="contenido">
 
-    <main>
-
-        <!-- Sección: ¿Qué es EcoReform? -->
-        <section>
-            <h2>¿QUÉ ES ECOREFORM?</h2>
-
-            <p>
-                EcoReform es una plataforma web que surgió a través de la necesidad
-                de los estudiantes y docentes del CBTA 35 por consultar el estado
-                de la flora y fauna del plantel, así como la problemática que se
-                vive en el mismo dada la poca o nula información disponible.
-
-                A través de este proyecto se busca informar, concientizar y motivar
-                a la comunidad estudiantil a tomar acción en pro del medio ambiente,
-                así como también informar a la comunidad en general sobre la
-                problemática que se vive en el CBTA 35 y cómo pueden ayudar a
-                mejorarla.
-            </p>
+        <!-- Sección 1: ¿Qué es EcoReform? (Destacada y centrada) -->
+        <section class="py-5 bg-white">
+            <div class="container py-4">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-9">
+                        <span class="badge rounded-pill px-3 py-2 mb-3 text-uppercase fw-bold" style="background-color: #d8f3dc; color: #064023; letter-spacing: 1.5px;">
+                            Sobre la plataforma
+                        </span>
+                        <h2 class="display-6 fw-bold text-uppercase mb-4" style="color: #064023;">
+                            ¿QUÉ ES ECOREFORM?
+                        </h2>
+                        <p class="lead text-secondary mb-3" style="line-height: 1.8;">
+                            EcoReform es una plataforma web que surgió a través de la necesidad
+                            de los estudiantes y docentes del CBTA 35 por consultar el estado
+                            de la flora y fauna del plantel, así como la problemática que se
+                            vive en el mismo dada la poca o nula información disponible.
+                        </p>
+                        <p class="text-muted fs-5" style="line-height: 1.8;">
+                            A través de este proyecto se busca informar, concientizar y motivar
+                            a la comunidad estudiantil a tomar acción en pro del medio ambiente,
+                            así como también informar a la comunidad en general sobre la
+                            problemática que se vive en el CBTA 35 y cómo pueden ayudar a
+                            mejorarla.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Sección: Contenido de EcoReform -->
-        <section>
-            <h2>¿QUÉ PUEDO ENCONTRAR EN ECOREFORM?</h2>
+        <!-- Sección 2 y 3: Contenido e Introducción en dos columnas equilibradas -->
+        <section class="py-5" style="background-color: #f4f9f5;">
+            <div class="container py-4">
+                <div class="row g-4 align-items-stretch">
 
-            <p>
-                En EcoReform, puedes encontrar información actualizada sobre la
-                flora y fauna del CBTA 35, así como las principales problemáticas
-                ambientales que se presentan en el plantel.
+                    <!-- Tarjeta: ¿Qué puedo encontrar en EcoReform? -->
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-3">
+                                    <span class="d-inline-flex align-items-center justify-content-center rounded-3 p-3" style="background-color: #d8f3dc; color: #19692c;">
+                                        <!-- Ícono opcional de Bootstrap Icons -->
+                                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <h2 class="h3 fw-bold text-uppercase mb-3" style="color: #064023;">
+                                    ¿QUÉ PUEDO ENCONTRAR EN ECOREFORM?
+                                </h2>
+                                <p class="text-secondary mb-3" style="line-height: 1.7;">
+                                    En EcoReform, puedes encontrar información actualizada sobre la
+                                    flora y fauna del CBTA 35, así como las principales problemáticas
+                                    ambientales que se presentan en el plantel.
+                                </p>
+                                <p class="text-secondary mb-0" style="line-height: 1.7;">
+                                    Además, ofrecemos soluciones propuestas por la comunidad
+                                    estudiantil y docente para abordar estas problemáticas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                Además, ofrecemos soluciones propuestas por la comunidad
-                estudiantil y docente para abordar estas problemáticas.
-            </p>
-        </section>
+                    <!-- Tarjeta: Introducción a la reforestación -->
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-white" style="background: linear-gradient(145deg, #064023 0%, #19692c 100%);">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-3">
+                                    <span class="d-inline-flex align-items-center justify-content-center rounded-3 p-3" style="background-color: rgba(255,255,255,0.15); color: #b7efc5;">
+                                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <h2 class="h3 fw-bold text-uppercase mb-3" style="color: #d8f3dc;">
+                                    INTRODUCCIÓN A LA REFORESTACIÓN
+                                </h2>
+                                <p class="mb-3" style="color: rgba(255,255,255,0.9); line-height: 1.7;">
+                                    La reforestación es el proceso de plantar árboles en áreas donde
+                                    anteriormente existían bosques o áreas verdes, pero que han sido
+                                    degradadas o deforestadas.
+                                </p>
+                                <p class="mb-3" style="color: rgba(255,255,255,0.9); line-height: 1.7;">
+                                    Este proceso es fundamental para restaurar los ecosistemas,
+                                    mejorar la calidad del aire, conservar la biodiversidad y mitigar
+                                    los efectos del cambio climático.
+                                </p>
+                                <p class="mb-0" style="color: rgba(255,255,255,0.9); line-height: 1.7;">
+                                    La reforestación no solo beneficia al medio ambiente, sino que
+                                    también tiene un impacto positivo en la salud y el bienestar
+                                    de las comunidades locales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Sección: Introducción a la reforestación -->
-        <section>
-            <h2>INTRODUCCIÓN A LA REFORESTACIÓN</h2>
-
-            <p>
-                La reforestación es el proceso de plantar árboles en áreas donde
-                anteriormente existían bosques o áreas verdes, pero que han sido
-                degradadas o deforestadas.
-
-                Este proceso es fundamental para restaurar los ecosistemas,
-                mejorar la calidad del aire, conservar la biodiversidad y mitigar
-                los efectos del cambio climático.
-
-                La reforestación no solo beneficia al medio ambiente, sino que
-                también tiene un impacto positivo en la salud y el bienestar
-                de las comunidades locales.
-            </p>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -228,20 +291,20 @@
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->
     <script
         src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-                crossorigin="anonymous">
-                </script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
 
-                <script>
-                    window.addEventListener('scroll', function() {
-                        const navbar = document.getElementById('mainNav');
-                        if (window.scrollY > 50) {
-                            navbar.classList.add('scrolled');
-                        } else {
-                            navbar.classList.remove('scrolled');
-                        }
-                    });
-                </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 
 </html>
