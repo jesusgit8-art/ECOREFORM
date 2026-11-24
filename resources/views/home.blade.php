@@ -98,17 +98,27 @@
 
         .arbol {
             position: absolute;
-            bottom: -40px;
-            /* Empuja el árbol 40px hacia abajo (oculta un poco la base de las raíces) */
+            bottom: -3vh;
+            /* Oculta ligeramente la base de forma proporcional */
             left: 50%;
             transform: translateX(-50%);
-            width: 100%;
-            max-width: 780px;
-            /* Reducirlo un poco (de 900px a 780px) baja la altura de la copa */
-            height: auto;
+            height: 96vh;
+            /* Ocupa siempre el 96% de la altura de la pantalla */
+            width: auto;
+            /* Mantiene la proporción original sin deformarse */
+            max-width: none;
+            /* Evita que en pantallas estrechas se encoja demasiado */
             z-index: 0 !important;
             opacity: 0.45;
             pointer-events: none;
+        }
+
+        /* Ajuste opcional solo para celulares en vertical */
+        @media (max-width: 576px) {
+            .arbol {
+                height: 75vh;
+                bottom: -2vh;
+            }
         }
 
         .capa-texto {
@@ -284,9 +294,111 @@
             </div>
         </section>
 
+        <!-- Sección 4: Galería del Plantel -->
+        <section class="py-5 bg-white">
+            <div class="container py-4">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <span class="badge rounded-pill px-3 py-2 mb-2 text-uppercase fw-bold" style="background-color: #d8f3dc; color: #064023; letter-spacing: 1.5px;">
+                            Nuestro Entorno
+                        </span>
+                        <h2 class="display-6 fw-bold text-uppercase mb-3" style="color: #064023;">
+                            GALERÍA DEL PLANTEL
+                        </h2>
+                        <p class="text-muted fs-5">
+                            Conoce las áreas verdes, espacios de cultivo y zonas de reforestación dentro del CBTA No. 35.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula de 3 columnas (en celular se apilan en 1) -->
+                <div class="row g-4">
+                    <!-- Imagen 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                            <img src="{{ asset('/images/plantel1.jpg') }}" class="card-img-top object-fit-cover" alt="Área verde del CBTA 35" style="height: 250px;">
+                            <div class="card-body p-3" style="background-color: #f4f9f5;">
+                                <h3 class="h6 fw-bold mb-1" style="color: #064023;">Áreas verdes del plantel</h3>
+                                <p class="text-secondary small mb-0">Espacios destinados a la conservación de flora local.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagen 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                            <img src="{{ asset('/images/plantel2.jpg') }}" class="card-img-top object-fit-cover" alt="Zona de reforestación" style="height: 250px;">
+                            <div class="card-body p-3" style="background-color: #f4f9f5;">
+                                <h3 class="h6 fw-bold mb-1" style="color: #064023;">Zonas de reforestación</h3>
+                                <p class="text-secondary small mb-0">Terrenos recuperados por la comunidad estudiantil.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagen 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                            <img src="{{ asset('/images/plantel3.jpg') }}" class="card-img-top object-fit-cover" alt="Flora del CBTA 35" style="height: 250px;">
+                            <div class="card-body p-3" style="background-color: #f4f9f5;">
+                                <h3 class="h6 fw-bold mb-1" style="color: #064023;">Flora y suelos</h3>
+                                <p class="text-secondary small mb-0">Especies vegetales presentes en nuestras instalaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
-    <footer>
-        <!-- place footer here -->
+
+    </main>
+    <footer class="text-white pt-5 pb-4" style="background-color: #064023;">
+        <div class="container">
+            <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.15) !important;">
+
+                <!-- Columna 1: Identidad del proyecto -->
+                <div class="col-lg-5">
+                    <span class="badge rounded-pill px-3 py-1 mb-2 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #b7efc5; letter-spacing: 1.5px;">
+                        CBTA No. 35
+                    </span>
+                    <h3 class="h4 fw-bold text-uppercase mb-3" style="color: #d8f3dc;">ECOREFORM</h3>
+                    <p class="small mb-0" style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">
+                        Plataforma web impulsada por estudiantes y docentes para informar, concientizar y fomentar la reforestación y el cuidado de la flora y fauna dentro de nuestro plantel.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Navegación rápida -->
+                <div class="col-6 col-lg-3 offset-lg-1">
+                    <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Secciones</h4>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="{{ route('inicio') }}" class="text-white text-decoration-none opacity-75">Inicio</a></li>
+                        <li><a href="{{ route('problematica') }}" class="text-white text-decoration-none opacity-75">Problemática</a></li>
+                        <li><a href="{{ route('flora') }}" class="text-white text-decoration-none opacity-75">Plantas y suelos</a></li>
+                        <li><a href="{{ route('solucion') }}" class="text-white text-decoration-none opacity-75">Soluciones</a></li>
+                        <li><a href="{{ route('nosotros') }}" class="text-white text-decoration-none opacity-75">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Proyecto Escolar -->
+                <div class="col-6 col-lg-3">
+                    <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Iniciativa</h4>
+                    <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
+                        Proyecto Escolar Comunitario (PEC) • Reforestación y Educación Ambiental.
+                    </p>
+                    <a href="#contenido" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-1">
+                        Subir ↑
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Barra inferior de derechos -->
+            <div class="pt-3 text-center">
+                <small style="color: rgba(255, 255, 255, 0.65);">
+                    © {{ date('Y') }} EcoReform • Centro de Bachillerato Tecnológico Agropecuario No. 35
+                </small>
+            </div>
+        </div>
     </footer>
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->
     <script
