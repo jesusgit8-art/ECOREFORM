@@ -22,4 +22,8 @@ Route::get('/Nosotros', function () {
     return view('nosotros');
 })->name('nosotros');
 
+Route::get('/Extra', function () {
+    return view('extra');
+})->name('extra');
+
 

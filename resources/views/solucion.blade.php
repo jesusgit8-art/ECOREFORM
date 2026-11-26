@@ -6,12 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS v5.3.8 -->
+    <!-- Hojas de estilo y fuentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-
-    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
+    <!-- Estilos personalizados -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -19,13 +18,12 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f6f4ef; /* Tono crema cálido unificado */
+            background-color: #f6f4ef;
             color: #1f2d24;
             margin: 0;
-            padding-top: 76px;
+            padding-top: 72px;
         }
 
-        /* Navbar consistente con el resto del sitio */
         #mainNav {
             background-color: #064023;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -44,7 +42,6 @@
             transform: translateY(-2px);
         }
 
-        /* Cabecera distintiva para Soluciones: Banner verde bosque con base curva */
         .hero-soluciones {
             background: linear-gradient(135deg, #064023 0%, #19692c 60%, #2d7a36 100%);
             color: white;
@@ -65,7 +62,6 @@
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
         }
 
-        /* Tarjetas tipo hoja de ruta numerada */
         .paso-card {
             background-color: #ffffff;
             border-radius: 20px;
@@ -101,7 +97,7 @@
 </head>
 
 <body>
-    <!-- Navbar unificado -->
+    <!-- Barra de navegación -->
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
         <div class="container">
             <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWireframe" aria-controls="navbarWireframe" aria-expanded="false" aria-label="Toggle navigation">
@@ -130,7 +126,7 @@
         </div>
     </nav>
 
-    <!-- Encabezado principal distintivo -->
+    <!-- Encabezado principal -->
     <header class="hero-soluciones text-center">
         <div class="container position-relative" style="z-index: 2;">
             <div class="row justify-content-center">
@@ -151,14 +147,13 @@
         </div>
     </header>
 
-    <!-- Contenido principal: Propuestas de soluciones -->
+    <!-- Contenido principal -->
     <main id="propuestas" class="py-5">
         <div class="container py-4">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-
+                    <!-- Lista de propuestas -->
                     <div class="d-flex flex-column gap-4 mb-5">
-                        
                         <!-- Propuesta 1 -->
                         <div class="card paso-card shadow-sm p-4">
                             <div class="card-body d-flex flex-column flex-md-row align-items-start gap-4 p-0">
@@ -218,10 +213,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <!-- Bloque final de objetivo y periodicidad -->
+                    <!-- Objetivo y periodicidad -->
                     <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 text-center" style="background-color: #d8f3dc;">
                         <div class="card-body p-0">
                             <span class="badge rounded-pill px-3 py-2 mb-3 text-uppercase fw-bold" style="background-color: #064023; color: #b7efc5; letter-spacing: 1.5px;">
@@ -232,18 +226,16 @@
                             </h3>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer institucional unificado -->
+    <!-- Pie de página -->
     <footer class="text-white pt-5 pb-4" style="background-color: #064023;">
         <div class="container">
             <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.15) !important;">
-                
-                <!-- Columna 1: Identidad del proyecto -->
+                <!-- Identidad del proyecto -->
                 <div class="col-lg-5">
                     <span class="badge rounded-pill px-3 py-1 mb-2 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #b7efc5; letter-spacing: 1.5px;">
                         CBTA No. 35
@@ -254,7 +246,7 @@
                     </p>
                 </div>
 
-                <!-- Columna 2: Navegación rápida -->
+                <!-- Enlaces de navegación -->
                 <div class="col-6 col-lg-3 offset-lg-1">
                     <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Secciones</h4>
                     <ul class="list-unstyled d-flex flex-column gap-2 small">
@@ -266,7 +258,7 @@
                     </ul>
                 </div>
 
-                <!-- Columna 3: Proyecto Escolar -->
+                <!-- Información de la iniciativa -->
                 <div class="col-6 col-lg-3">
                     <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Iniciativa</h4>
                     <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
@@ -276,10 +268,9 @@
                         Subir ↑
                     </a>
                 </div>
-
             </div>
 
-            <!-- Barra inferior de derechos -->
+            <!-- Derechos de autor -->
             <div class="pt-3 text-center">
                 <small style="color: rgba(255, 255, 255, 0.65);">
                     © {{ date('Y') }} EcoReform • Centro de Bachillerato Tecnológico Agropecuario No. 35
@@ -288,7 +279,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript Bundle -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 

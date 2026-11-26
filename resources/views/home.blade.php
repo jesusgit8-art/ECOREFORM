@@ -1,21 +1,27 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="es" data-bs-theme="light">
 
 <head>
     <title>Inicio - ECOREFORM</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS v5.3.8 -->
+    <!-- Hojas de estilo y fuentes -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet" />
+        crossorigin="anonymous" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap"
+        rel="stylesheet" />
 
+    <!-- Estilos personalizados -->
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -36,7 +42,6 @@
             flex-direction: column;
         }
 
-        /* Estilo de los enlaces del Navbar */
         .navbar-nav .nav-link {
             color: rgba(255, 255, 255, 0.9) !important;
             font-weight: 600;
@@ -49,7 +54,6 @@
             transform: translateY(-2px);
         }
 
-        /* Botón CTA destacado */
         .btn-ecologico {
             background-color: #ffffff;
             color: #19692c;
@@ -66,13 +70,11 @@
             transform: scale(1.05);
         }
 
-        /* Estado inicial transparente (arriba) */
         #mainNav {
             background-color: transparent;
             transition: background-color 0.3s ease, padding 0.3s ease;
         }
 
-        /* Estado al bajar (fondo verde bosque sólido) */
         #mainNav.scrolled {
             background-color: #064023 !important;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -80,16 +82,13 @@
             padding-bottom: 0.75rem !important;
         }
 
-        /* Para el título más grande ("TOMA EL CONTROL") */
         .titlemain {
             font-size: clamp(2.8rem, 7vw, 6rem);
             font-weight: 900;
             line-height: 1.05;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
-            /* Junta un poco las líneas si el texto baja de renglón */
         }
 
-        /* Para el subtítulo ("PLANTA UN ÁRBOL") */
         .subtitlemain {
             font-size: clamp(1.8rem, 4.5vw, 3.8rem);
             font-weight: 700;
@@ -99,21 +98,16 @@
         .arbol {
             position: absolute;
             bottom: -3vh;
-            /* Oculta ligeramente la base de forma proporcional */
             left: 50%;
             transform: translateX(-50%);
             height: 96vh;
-            /* Ocupa siempre el 96% de la altura de la pantalla */
             width: auto;
-            /* Mantiene la proporción original sin deformarse */
             max-width: none;
-            /* Evita que en pantallas estrechas se encoja demasiado */
             z-index: 0 !important;
             opacity: 0.45;
             pointer-events: none;
         }
 
-        /* Ajuste opcional solo para celulares en vertical */
         @media (max-width: 576px) {
             .arbol {
                 height: 75vh;
@@ -123,31 +117,49 @@
 
         .capa-texto {
             position: relative !important;
-            /* Indispensable para que funcione z-index */
             z-index: 5 !important;
-            /* Siempre por encima del árbol */
         }
 
-        html {
-            scroll-behavior: smooth;
+        .galeria-item {
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(6, 64, 35, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #f4f9f5;
+            cursor: pointer;
+            /* Indica que se puede hacer clic */
+        }
+
+        .galeria-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(6, 64, 35, 0.16);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.06);
         }
 
         #contenido {
             scroll-margin-top: 75px;
         }
     </style>
-
 </head>
 
 <body>
+    <!-- Encabezado principal -->
     <header class="hero-verde d-flex justify-content-center align-items-center text-center min-vh-100 position-relative overflow-hidden">
-        <img src="{{  asset('/images/tree.png') }}" alt="Árbol de fondo" class="arbol">
-        <!-- Navbar transparente con los 5 apartados del wireframe centrados -->
+        <img src="{{ asset('/images/tree.png') }}" alt="Árbol de fondo" class="arbol">
+
+        <!-- Barra de navegación -->
         <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top py-4">
             <div class="container">
-
-
-
                 <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWireframe" aria-controls="navbarWireframe" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -171,31 +183,25 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </nav>
 
+        <!-- Contenido Hero -->
         <div class="capa-texto">
-
             <p class="text-uppercase fw-bold mb-2" style="letter-spacing: 4px; color: #b7efc5; font-size: 0.9rem;">
                 CBTA No. 35 • EcoReform
             </p>
-
             <h1 class="frame titlemain text-uppercase mb-3">TOMA EL CONTROL</h1>
-
             <h2 class="frame subtitlemain text-uppercase mb-4" style="color: #d8f3dc;">PLANTA UN ÁRBOL</h2>
-
             <a href="#contenido" class="btn btn-outline-light rounded-pill px-4 py-2 mt-4 fw-semibold">
                 Conoce más ↓
             </a>
-
         </div>
     </header>
 
-    <br>
+    <!-- Contenido principal -->
     <main id="contenido">
-
-        <!-- Sección 1: ¿Qué es EcoReform? (Destacada y centrada) -->
+        <!-- Sección 1: Descripción de la plataforma -->
         <section class="py-5 bg-white">
             <div class="container py-4">
                 <div class="row justify-content-center text-center">
@@ -224,18 +230,16 @@
             </div>
         </section>
 
-        <!-- Sección 2 y 3: Contenido e Introducción en dos columnas equilibradas -->
+        <!-- Sección 2: Información general y reforestación -->
         <section class="py-5" style="background-color: #f4f9f5;">
             <div class="container py-4">
                 <div class="row g-4 align-items-stretch">
-
-                    <!-- Tarjeta: ¿Qué puedo encontrar en EcoReform? -->
+                    <!-- Tarjeta 1: Contenido del sitio -->
                     <div class="col-lg-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
                             <div class="card-body d-flex flex-column">
                                 <div class="mb-3">
                                     <span class="d-inline-flex align-items-center justify-content-center rounded-3 p-3" style="background-color: #d8f3dc; color: #19692c;">
-                                        <!-- Ícono opcional de Bootstrap Icons -->
                                         <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                         </svg>
@@ -257,7 +261,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta: Introducción a la reforestación -->
+                    <!-- Tarjeta 2: Introducción a la reforestación -->
                     <div class="col-lg-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-white" style="background: linear-gradient(145deg, #064023 0%, #19692c 100%);">
                             <div class="card-body d-flex flex-column">
@@ -289,12 +293,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Sección 4: Galería del Plantel -->
+        <!-- Sección 3: Galería del plantel -->
         <section class="py-5 bg-white">
             <div class="container py-4">
                 <div class="row justify-content-center text-center mb-5">
@@ -306,117 +309,102 @@
                             GALERÍA DEL PLANTEL
                         </h2>
                         <p class="text-muted fs-5">
-                            Conoce las áreas verdes, espacios de cultivo y zonas de reforestación dentro del CBTA No. 35.
+                            Conoce las áreas verdes dentro del CBTA No. 35.
                         </p>
                     </div>
                 </div>
 
-                <!-- Cuadrícula de 3 columnas (en celular se apilan en 1) -->
-                <div class="row g-4">
-                    <!-- Imagen 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-                            <img src="{{ asset('/images/plantel1.jpg') }}" class="card-img-top object-fit-cover" alt="Área verde del CBTA 35" style="height: 250px;">
-                            <div class="card-body p-3" style="background-color: #f4f9f5;">
-                                <h3 class="h6 fw-bold mb-1" style="color: #064023;">Áreas verdes del plantel</h3>
-                                <p class="text-secondary small mb-0">Espacios destinados a la conservación de flora local.</p>
+                <!-- Cuadrícula de 16 imágenes -->
+                <div class="row g-3 g-md-4">
+                    @for ($i = 1; $i <= 16; $i++)
+                        <!-- Miniatura -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto{{ $i }}">
+                                <img src="{{ asset('/images/gallery/plantel' . $i . '.jpg') }}" alt="Galería CBTA 35 - {{ $i }}" loading="lazy">
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Imagen 2 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-                            <img src="{{ asset('/images/plantel2.jpg') }}" class="card-img-top object-fit-cover" alt="Zona de reforestación" style="height: 250px;">
-                            <div class="card-body p-3" style="background-color: #f4f9f5;">
-                                <h3 class="h6 fw-bold mb-1" style="color: #064023;">Zonas de reforestación</h3>
-                                <p class="text-secondary small mb-0">Terrenos recuperados por la comunidad estudiantil.</p>
+                        <!-- Visor emergente (Modal) sin JS personalizado -->
+                        <div class="modal fade" id="modalFoto{{ $i }}" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content bg-transparent border-0">
+                                    <div class="modal-body p-0 position-relative text-center">
+                                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 bg-dark rounded-circle p-2 opacity-75" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                        <img src="{{ asset('/images/gallery/plantel' . $i . '.jpg') }}" class="img-fluid rounded-4 shadow-lg" alt="Galería CBTA 35 - {{ $i }}" style="max-height: 85vh;">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Imagen 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-                            <img src="{{ asset('/images/plantel3.jpg') }}" class="card-img-top object-fit-cover" alt="Flora del CBTA 35" style="height: 250px;">
-                            <div class="card-body p-3" style="background-color: #f4f9f5;">
-                                <h3 class="h6 fw-bold mb-1" style="color: #064023;">Flora y suelos</h3>
-                                <p class="text-secondary small mb-0">Especies vegetales presentes en nuestras instalaciones.</p>
-                            </div>
-                        </div>
-                    </div>
+                        @endfor
                 </div>
             </div>
         </section>
 
-    </main>
+        <!-- Pie de página -->
+        <footer class="text-white pt-5 pb-4" style="background-color: #064023;">
+            <div class="container">
+                <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.15) !important;">
+                    <!-- Identidad del proyecto -->
+                    <div class="col-lg-5">
+                        <span class="badge rounded-pill px-3 py-1 mb-2 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #b7efc5; letter-spacing: 1.5px;">
+                            CBTA No. 35
+                        </span>
+                        <h3 class="h4 fw-bold text-uppercase mb-3" style="color: #d8f3dc;">ECOREFORM</h3>
+                        <p class="small mb-0" style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">
+                            Plataforma web impulsada por estudiantes y docentes para informar, concientizar y fomentar la reforestación y el cuidado de la flora y fauna dentro de nuestro plantel.
+                        </p>
+                    </div>
 
-    </main>
-    <footer class="text-white pt-5 pb-4" style="background-color: #064023;">
-        <div class="container">
-            <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.15) !important;">
+                    <!-- Enlaces de navegación -->
+                    <div class="col-6 col-lg-3 offset-lg-1">
+                        <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Secciones</h4>
+                        <ul class="list-unstyled d-flex flex-column gap-2 small">
+                            <li><a href="{{ route('inicio') }}" class="text-white text-decoration-none opacity-75">Inicio</a></li>
+                            <li><a href="{{ route('problematica') }}" class="text-white text-decoration-none opacity-75">Problemática</a></li>
+                            <li><a href="{{ route('flora') }}" class="text-white text-decoration-none opacity-75">Plantas y suelos</a></li>
+                            <li><a href="{{ route('solucion') }}" class="text-white text-decoration-none opacity-75">Soluciones</a></li>
+                            <li><a href="{{ route('nosotros') }}" class="text-white text-decoration-none opacity-75">Sobre nosotros</a></li>
+                        </ul>
+                    </div>
 
-                <!-- Columna 1: Identidad del proyecto -->
-                <div class="col-lg-5">
-                    <span class="badge rounded-pill px-3 py-1 mb-2 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #b7efc5; letter-spacing: 1.5px;">
-                        CBTA No. 35
-                    </span>
-                    <h3 class="h4 fw-bold text-uppercase mb-3" style="color: #d8f3dc;">ECOREFORM</h3>
-                    <p class="small mb-0" style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">
-                        Plataforma web impulsada por estudiantes y docentes para informar, concientizar y fomentar la reforestación y el cuidado de la flora y fauna dentro de nuestro plantel.
-                    </p>
+                    <!-- Información de la iniciativa -->
+                    <div class="col-6 col-lg-3">
+                        <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Iniciativa</h4>
+                        <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
+                            Proyecto Escolar Comunitario (PEC) • Reforestación y Educación Ambiental.
+                        </p>
+                        <a href="#contenido" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-1">
+                            Subir ↑
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Columna 2: Navegación rápida -->
-                <div class="col-6 col-lg-3 offset-lg-1">
-                    <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Secciones</h4>
-                    <ul class="list-unstyled d-flex flex-column gap-2 small">
-                        <li><a href="{{ route('inicio') }}" class="text-white text-decoration-none opacity-75">Inicio</a></li>
-                        <li><a href="{{ route('problematica') }}" class="text-white text-decoration-none opacity-75">Problemática</a></li>
-                        <li><a href="{{ route('flora') }}" class="text-white text-decoration-none opacity-75">Plantas y suelos</a></li>
-                        <li><a href="{{ route('solucion') }}" class="text-white text-decoration-none opacity-75">Soluciones</a></li>
-                        <li><a href="{{ route('nosotros') }}" class="text-white text-decoration-none opacity-75">Sobre nosotros</a></li>
-                    </ul>
+                <!-- Derechos de autor -->
+                <div class="pt-3 text-center">
+                    <small style="color: rgba(255, 255, 255, 0.65);">
+                        © {{ date('Y') }} EcoReform • Centro de Bachillerato Tecnológico Agropecuario No. 35
+                    </small>
                 </div>
-
-                <!-- Columna 3: Proyecto Escolar -->
-                <div class="col-6 col-lg-3">
-                    <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Iniciativa</h4>
-                    <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
-                        Proyecto Escolar Comunitario (PEC) • Reforestación y Educación Ambiental.
-                    </p>
-                    <a href="#contenido" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-1">
-                        Subir ↑
-                    </a>
-                </div>
-
             </div>
+        </footer>
 
-            <!-- Barra inferior de derechos -->
-            <div class="pt-3 text-center">
-                <small style="color: rgba(255, 255, 255, 0.65);">
-                    © {{ date('Y') }} EcoReform • Centro de Bachillerato Tecnológico Agropecuario No. 35
-                </small>
-            </div>
-        </div>
-    </footer>
-    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
-    <script
-        src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
+        <!-- Scripts -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous">
+        </script>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('mainNav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
+        <script>
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('mainNav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
 </body>
 
 </html>

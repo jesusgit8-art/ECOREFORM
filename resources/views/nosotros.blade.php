@@ -6,12 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS v5.3.8 -->
+    <!-- Hojas de estilo y fuentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-
-    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
+    <!-- Estilos personalizados -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -19,13 +18,12 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f6f4ef; /* Tono crema cálido unificado */
+            background-color: #f6f4ef;
             color: #1f2d24;
             margin: 0;
             padding-top: 80px;
         }
 
-        /* Navbar consistente con todo el sitio */
         #mainNav {
             background-color: #064023;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -44,7 +42,6 @@
             transform: translateY(-2px);
         }
 
-        /* Cabecera distintiva editorial para Sobre Nosotros */
         .hero-nosotros {
             background-color: #f6f4ef;
             padding-top: 4rem;
@@ -60,7 +57,6 @@
             text-transform: uppercase;
         }
 
-        /* Tarjeta de créditos institucionales */
         .card-creditos {
             background: linear-gradient(135deg, #064023 0%, #19692c 100%);
             color: white;
@@ -69,7 +65,6 @@
             box-shadow: 0 15px 35px rgba(6, 64, 35, 0.18);
         }
 
-        /* Cuadros para logos de Frameworks, Lenguajes y Programas */
         .tech-slot {
             background-color: #f6f4ef;
             border: 2px dashed #b7efc5;
@@ -106,7 +101,7 @@
 </head>
 
 <body>
-    <!-- Navbar unificado -->
+    <!-- Barra de navegación -->
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
         <div class="container">
             <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWireframe" aria-controls="navbarWireframe" aria-expanded="false" aria-label="Toggle navigation">
@@ -156,8 +151,8 @@
         </div>
     </header>
 
+    <!-- Contenido principal -->
     <main>
-
         <!-- Sección 1: Información del desarrollador e institución -->
         <section class="pb-5">
             <div class="container">
@@ -172,7 +167,7 @@
                                 <p class="fs-5 mb-2" style="color: rgba(255,255,255,0.85);">
                                     Desarrollado por:
                                 </p>
-                                <h3 class="h2 fw-black text-uppercase mb-4" style="color: #ffffff; letter-spacing: 0.5px;">
+                                <h3 class="h2 fw-bold text-uppercase mb-4" style="color: #ffffff; letter-spacing: 0.5px;">
                                     Márquez Pérez Jesús Daniel
                                 </h3>
 
@@ -192,7 +187,7 @@
             </div>
         </section>
 
-        <!-- Sección 2: Apartados de imágenes para Frameworks, Lenguajes y Programas -->
+        <!-- Sección 2: Herramientas de desarrollo -->
         <section class="py-5 bg-white">
             <div class="container py-3">
                 <div class="row justify-content-center text-center mb-5">
@@ -210,8 +205,7 @@
                 </div>
 
                 <div class="row g-4">
-                    
-                    <!-- Apartado 1: FRAMEWORKS -->
+                    <!-- Frameworks -->
                     <div class="col-lg-4">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f6f4ef;">
                             <div class="card-body p-0">
@@ -219,14 +213,14 @@
                                     Frameworks
                                 </h3>
                                 <div class="row g-3">
-                                    <!-- Logo Framework 1 (ej. Laravel) -->
+                                    <!-- Laravel -->
                                     <div class="col-6">
                                         <div class="tech-slot">
                                             <img src="{{ asset('/images/tech/laravel.png') }}" alt="Laravel">
                                             <span class="small fw-bold" style="color: #064023;">Laravel</span>
                                         </div>
                                     </div>
-                                    <!-- Logo Framework 2 (ej. Bootstrap) -->
+                                    <!-- Bootstrap 5 -->
                                     <div class="col-6">
                                         <div class="tech-slot">
                                             <img src="{{ asset('/images/tech/bootstrap.png') }}" alt="Bootstrap 5">
@@ -238,7 +232,7 @@
                         </div>
                     </div>
 
-                    <!-- Apartado 2: LENGUAJES -->
+                    <!-- Lenguajes -->
                     <div class="col-lg-4">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f6f4ef;">
                             <div class="card-body p-0">
@@ -246,28 +240,28 @@
                                     Lenguajes
                                 </h3>
                                 <div class="row g-3">
-                                    <!-- Logo Lenguaje 1 (HTML5) -->
+                                    <!-- HTML5 -->
                                     <div class="col-6">
                                         <div class="tech-slot">
                                             <img src="{{ asset('/images/tech/html.png') }}" alt="HTML5">
                                             <span class="small fw-bold" style="color: #064023;">HTML5</span>
                                         </div>
                                     </div>
-                                    <!-- Logo Lenguaje 2 (CSS3) -->
+                                    <!-- CSS3 -->
                                     <div class="col-6">
                                         <div class="tech-slot">
                                             <img src="{{ asset('/images/tech/css.png') }}" alt="CSS3">
                                             <span class="small fw-bold" style="color: #064023;">CSS3</span>
                                         </div>
                                     </div>
-                                    <!-- Logo Lenguaje 3 (JavaScript) -->
+                                    <!-- JavaScript -->
                                     <div class="col-6">
                                         <div class="tech-slot">
                                             <img src="{{ asset('/images/tech/js.png') }}" alt="JavaScript">
                                             <span class="small fw-bold" style="color: #064023;">JavaScript</span>
                                         </div>
                                     </div>
-                                    <!-- Logo Lenguaje 4 (PHP) -->
+                                    <!-- PHP -->
                                     <div class="col-6">
                                         <div class="tech-slot">
                                             <img src="{{ asset('/images/tech/php.png') }}" alt="PHP">
@@ -279,7 +273,7 @@
                         </div>
                     </div>
 
-                    <!-- Apartado 3: PROGRAMAS -->
+                    <!-- Programas y Herramientas -->
                     <div class="col-lg-4">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f6f4ef;">
                             <div class="card-body p-0">
@@ -287,25 +281,45 @@
                                     Programas
                                 </h3>
                                 <div class="row g-3">
-                                    <!-- Logo Programa 1 (ej. VS Code) -->
+                                    <!-- VS Code -->
                                     <div class="col-6">
                                         <div class="tech-slot">
                                             <img src="{{ asset('/images/tech/vscode.png') }}" alt="VS Code">
                                             <span class="small fw-bold" style="color: #064023;">VS Code</span>
                                         </div>
                                     </div>
-                                    <!-- Logo Programa 2 (ej. Laragon / XAMPP / Canva) -->
+                                    <!-- Git -->
                                     <div class="col-6">
                                         <div class="tech-slot">
-                                            <img src="{{ asset('/images/tech/programa2.png') }}" alt="Programa 2">
-                                            <span class="small fw-bold" style="color: #064023;">Programa 2</span>
+                                            <img src="{{ asset('/images/tech/git.png') }}" alt="Git">
+                                            <span class="small fw-bold" style="color: #064023;">Git</span>
+                                        </div>
+                                    </div>
+                                    <!-- GitHub -->
+                                    <div class="col-6">
+                                        <div class="tech-slot">
+                                            <img src="{{ asset('/images/tech/github.png') }}" alt="GitHub">
+                                            <span class="small fw-bold" style="color: #064023;">GitHub</span>
+                                        </div>
+                                    </div>
+                                    <!-- Node.js -->
+                                    <div class="col-6">
+                                        <div class="tech-slot">
+                                            <img src="{{ asset('/images/tech/nodejs.png') }}" alt="Node.js">
+                                            <span class="small fw-bold" style="color: #064023;">Node.js</span>
+                                        </div>
+                                    </div>
+                                    <!-- Composer -->
+                                    <div class="col-12">
+                                        <div class="tech-slot">
+                                            <img src="{{ asset('/images/tech/composer.png') }}" alt="Composer">
+                                            <span class="small fw-bold" style="color: #064023;">Composer</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -325,7 +339,6 @@
                         </div>
 
                         <div class="d-flex flex-column gap-3">
-                            
                             <!-- Fuente 1 -->
                             <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
                                 <div class="card-body p-0 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
@@ -400,21 +413,19 @@
                                     </a>
                                 </div>
                             </div>
-
+                            <a class="btn btn-success" href="{{ route('extra') }}">Ver otras páginas</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer institucional unificado -->
+    <!-- Pie de página -->
     <footer class="text-white pt-5 pb-4" style="background-color: #064023;">
         <div class="container">
             <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.15) !important;">
-                
-                <!-- Columna 1: Identidad del proyecto -->
+                <!-- Identidad del proyecto -->
                 <div class="col-lg-5">
                     <span class="badge rounded-pill px-3 py-1 mb-2 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #b7efc5; letter-spacing: 1.5px;">
                         CBTA No. 35
@@ -425,7 +436,7 @@
                     </p>
                 </div>
 
-                <!-- Columna 2: Navegación rápida -->
+                <!-- Enlaces de navegación -->
                 <div class="col-6 col-lg-3 offset-lg-1">
                     <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Secciones</h4>
                     <ul class="list-unstyled d-flex flex-column gap-2 small">
@@ -437,7 +448,7 @@
                     </ul>
                 </div>
 
-                <!-- Columna 3: Proyecto Escolar -->
+                <!-- Información de la iniciativa -->
                 <div class="col-6 col-lg-3">
                     <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Iniciativa</h4>
                     <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
@@ -447,10 +458,9 @@
                         Subir ↑
                     </a>
                 </div>
-
             </div>
 
-            <!-- Barra inferior de derechos -->
+            <!-- Derechos de autor -->
             <div class="pt-3 text-center">
                 <small style="color: rgba(255, 255, 255, 0.65);">
                     © {{ date('Y') }} EcoReform • Centro de Bachillerato Tecnológico Agropecuario No. 35
@@ -459,7 +469,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript Bundle -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 

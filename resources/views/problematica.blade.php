@@ -6,12 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS v5.3.8 -->
+    <!-- Hojas de estilo y fuentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-
-    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
+    <!-- Estilos personalizados -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -23,7 +22,6 @@
             color: #1f2d24;
             margin: 0;
             padding-top: 72px;
-            /* Altura exacta del navbar */
         }
 
         #mainNav {
@@ -64,43 +62,6 @@
             align-items: center;
         }
 
-        .mancha-problematica {
-            position: absolute;
-            top: -5%;
-            left: -8%;
-            width: 56%;
-            height: 110%;
-            background: linear-gradient(135deg, #f0e2d0 0%, #e5cfb8 100%);
-            border-radius: 42% 58% 62% 38% / 55% 48% 52% 45%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .contenido-izquierdo-problematica {
-            position: relative;
-            z-index: 2;
-            padding: 3.5rem 2.5rem 3.5rem 6%;
-        }
-
-        .imagen-full-derecha {
-            width: 100%;
-            height: 100%;
-            min-height: calc(100vh - 72px);
-            object-fit: cover;
-            display: block;
-        }
-
-        @media (max-width: 991.98px) {
-            .mancha-problematica {
-                width: 120%;
-                height: 100%;
-                top: 0;
-                left: -10%;
-                transform: none;
-                border-radius: 0;
-            }
-        }
-
         .imagen-fondo-completa {
             position: absolute;
             top: 0;
@@ -117,20 +78,35 @@
             left: -20vh;
             transform: translateY(-50%);
             width: 140vh;
-            /* Mismo ancho y alto para mantener proporción circular */
             height: 148vh;
             background: linear-gradient(135deg, rgba(246, 244, 239, 0.96) 0%, rgba(234, 211, 188, 0.94) 100%);
             border-radius: 52% 48% 50% 50% / 50% 52% 48% 50%;
-            /* Círculo con curva orgánica muy sutil */
             z-index: 1;
             pointer-events: none;
             box-shadow: 15px 0 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .contenido-izquierdo-problematica {
+            position: relative;
+            z-index: 2;
+            padding: 3.5rem 2.5rem 3.5rem 6%;
+        }
+
+        @media (max-width: 991.98px) {
+            .mancha-problematica {
+                width: 120%;
+                height: 100%;
+                top: 0;
+                left: -10%;
+                transform: none;
+                border-radius: 0;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar 100% HTML y CSS (sin JavaScript) -->
+    <!-- Barra de navegación -->
     <nav id="mainNav" class="navbar navbar-dark fixed-top py-3">
         <div class="container justify-content-center">
             <ul class="navbar-nav flex-row flex-wrap justify-content-center gap-3 gap-lg-4 text-center align-items-center">
@@ -155,13 +131,10 @@
 
     <!-- Encabezado principal -->
     <header class="hero-problematica">
-        <!-- Imagen ocupando el 100% de todo el espacio -->
         <img src="{{ asset('/images/suelo.jpg') }}" alt="Problemática en el CBTA 35" class="imagen-fondo-completa">
-
-        <!-- Mancha café/arena encima de la imagen -->
         <div class="mancha-problematica"></div>
 
-        <!-- Texto a la izquierda -->
+        <!-- Contenido Hero -->
         <div class="container-fluid p-0">
             <div class="row g-0">
                 <div class="col-lg-6 contenido-izquierdo-problematica">
@@ -193,8 +166,7 @@
 
     <!-- Contenido principal -->
     <main id="contenido">
-
-        <!-- Sección: Causas de la deforestación -->
+        <!-- Sección 1: Causas de la deforestación -->
         <section class="py-5 bg-white">
             <div class="container py-4">
                 <div class="row justify-content-center text-center mb-5">
@@ -212,8 +184,8 @@
                     </div>
                 </div>
 
+                <!-- Tarjetas de causas -->
                 <div class="row g-4">
-                    <!-- Causa 1 -->
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5;">
                             <div class="card-body">
@@ -228,7 +200,6 @@
                         </div>
                     </div>
 
-                    <!-- Causa 2 -->
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5;">
                             <div class="card-body">
@@ -242,7 +213,6 @@
                         </div>
                     </div>
 
-                    <!-- Causa 3 -->
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5;">
                             <div class="card-body">
@@ -256,7 +226,6 @@
                         </div>
                     </div>
 
-                    <!-- Causa 4 -->
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5;">
                             <div class="card-body">
@@ -273,7 +242,7 @@
             </div>
         </section>
 
-        <!-- Sección: Consecuencias de la deforestación -->
+        <!-- Sección 2: Consecuencias de la deforestación -->
         <section class="py-5" style="background-color: #f4f9f5;">
             <div class="container py-4">
                 <div class="row justify-content-center text-center mb-5">
@@ -291,6 +260,7 @@
                     </div>
                 </div>
 
+                <!-- Tarjetas de consecuencias -->
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-3 bg-white">
@@ -345,7 +315,7 @@
             </div>
         </section>
 
-        <!-- Sección: ¿Cómo afecta al CBTA 35? -->
+        <!-- Sección 3: Impacto en el plantel -->
         <section class="py-5 text-white" style="background: linear-gradient(135deg, #064023 0%, #19692c 100%);">
             <div class="container py-4">
                 <div class="row justify-content-center">
@@ -375,4 +345,144 @@
                     </div>
                 </div>
             </div>
-            </
+        </section>
+
+        <!-- Sección 4: Testimonios de estudiantes -->
+        <section class="py-5 bg-white">
+            <div class="container py-4">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-9">
+                        <span class="badge rounded-pill px-3 py-2 mb-2 text-uppercase fw-bold" style="background-color: #d8f3dc; color: #064023;">
+                            Voz Estudiantil
+                        </span>
+                        <h2 class="h3 fw-bold text-uppercase mb-3" style="color: #064023;">
+                            Experiencia de los estudiantes ante la problemática
+                        </h2>
+                        <p class="text-muted fs-5 mb-0">
+                            A raíz de la pregunta detonante y captura de respuesta hacia estudiantes del plantel: <em>“¿Cómo has vivido la problemática de la falta de flora del CBTA 35?”</em>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjetas de testimonios -->
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5; border-left: 4px solid #19692c !important;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-secondary fst-italic mb-3" style="line-height: 1.7;">
+                                    “A veces se ve muy seco el ambiente.”
+                                </p>
+                                <h3 class="h6 fw-bold text-uppercase mb-0" style="color: #064023;">Estudiante 1</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5; border-left: 4px solid #19692c !important;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-secondary fst-italic mb-3" style="line-height: 1.7;">
+                                    “Lo he vivido bien, hay mucha flora en el plantel.”
+                                </p>
+                                <h3 class="h6 fw-bold text-uppercase mb-0" style="color: #064023;">Estudiante 2</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5; border-left: 4px solid #19692c !important;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-secondary fst-italic mb-3" style="line-height: 1.7;">
+                                    “No hay mucho mantenimiento en las áreas verdes que se deberían de hacer y eso causa pérdida de plantas.”
+                                </p>
+                                <h3 class="h6 fw-bold text-uppercase mb-0" style="color: #064023;">Estudiante 3</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5; border-left: 4px solid #19692c !important;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-secondary fst-italic mb-3" style="line-height: 1.7;">
+                                    “No siento que hay espacio libre porque hay basura en las áreas verdes y no hay suficiente flora ni fauna que podamos disfrutar como estudiantes.”
+                                </p>
+                                <h3 class="h6 fw-bold text-uppercase mb-0" style="color: #064023;">Estudiante 4</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5; border-left: 4px solid #19692c !important;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-secondary fst-italic mb-3" style="line-height: 1.7;">
+                                    “Se ve muy feo y descolorido.”
+                                </p>
+                                <h3 class="h6 fw-bold text-uppercase mb-0" style="color: #064023;">Estudiante 5</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4f9f5; border-left: 4px solid #19692c !important;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="text-secondary fst-italic mb-3" style="line-height: 1.7;">
+                                    “Por el daño del suelo, el ambiente de las plantas y cómo se usa el terreno.”
+                                </p>
+                                <h3 class="h6 fw-bold text-uppercase mb-0" style="color: #064023;">Estudiante 6</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="text-white pt-5 pb-4" style="background-color: #064023;">
+        <div class="container">
+            <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.15) !important;">
+                <!-- Identidad del proyecto -->
+                <div class="col-lg-5">
+                    <span class="badge rounded-pill px-3 py-1 mb-2 text-uppercase fw-bold" style="background-color: rgba(255, 255, 255, 0.15); color: #b7efc5; letter-spacing: 1.5px;">
+                        CBTA No. 35
+                    </span>
+                    <h3 class="h4 fw-bold text-uppercase mb-3" style="color: #d8f3dc;">ECOREFORM</h3>
+                    <p class="small mb-0" style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">
+                        Plataforma web impulsada por estudiantes y docentes para informar, concientizar y fomentar la reforestación y el cuidado de la flora y fauna dentro de nuestro plantel.
+                    </p>
+                </div>
+
+                <!-- Enlaces de navegación -->
+                <div class="col-6 col-lg-3 offset-lg-1">
+                    <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Secciones</h4>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="{{ route('inicio') }}" class="text-white text-decoration-none opacity-75">Inicio</a></li>
+                        <li><a href="{{ route('problematica') }}" class="text-white text-decoration-none opacity-75">Problemática</a></li>
+                        <li><a href="{{ route('flora') }}" class="text-white text-decoration-none opacity-75">Plantas y suelos</a></li>
+                        <li><a href="{{ route('solucion') }}" class="text-white text-decoration-none opacity-75">Soluciones</a></li>
+                        <li><a href="{{ route('nosotros') }}" class="text-white text-decoration-none opacity-75">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Información de la iniciativa -->
+                <div class="col-6 col-lg-3">
+                    <h4 class="h6 fw-bold text-uppercase mb-3" style="color: #b7efc5;">Iniciativa</h4>
+                    <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
+                        Proyecto Escolar Comunitario (PEC) • Reforestación y Educación Ambiental.
+                    </p>
+                    <a href="#contenido" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-1">
+                        Subir ↑
+                    </a>
+                </div>
+            </div>
+
+            <!-- Derechos de autor -->
+            <div class="pt-3 text-center">
+                <small style="color: rgba(255, 255, 255, 0.65);">
+                    © {{ date('Y') }} EcoReform • Centro de Bachillerato Tecnológico Agropecuario No. 35
+                </small>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
