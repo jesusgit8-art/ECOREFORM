@@ -74,14 +74,25 @@
 
         .imagen-flora {
             width: 100%;
-            height: 320px;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border: 6px solid #ffffff;
+        }
+
+        .imagen-hero-suelo {
+            width: 100%;
+            max-height: 450px;
+            aspect-ratio: 4 / 3;
             object-fit: cover;
             border: 6px solid #ffffff;
         }
 
         @media (max-width: 576px) {
-            .imagen-flora {
-                height: 250px;
+
+            .imagen-flora,
+            .imagen-hero-suelo {
+                aspect-ratio: 16 / 11;
+                border-width: 4px;
             }
         }
     </style>
@@ -156,9 +167,7 @@
 
                 <!-- Imagen destacada -->
                 <div class="col-lg-5 text-center">
-                    <div class="col-lg-5 text-center">
-                        <img src="{{ asset('/images/suelo2.jpg') }}" alt="Suelo" class="img-fluid rounded-4 shadow-lg" style="max-width: 900px; height: 500px; object-fit: cover; border: 6px solid #ffffff;">
-                    </div>
+                    <img src="{{ asset('/images/suelo2.jpg') }}" alt="Suelo" class="img-fluid rounded-4 shadow-lg imagen-hero-suelo">
                 </div>
             </div>
         </div>
@@ -379,7 +388,7 @@
                             <div class="card-body">
                                 <div class="text-center mb-4">
                                     <img src="{{ asset('/images/fresno.png') }}" alt="Fresno" class="img-fluid rounded-4 shadow-lg imagen-flora">
-                                <br>
+                                </div>
                                 <h4 class="h5 fw-bold text-uppercase mb-3" style="color: #064023;">Fresno</h4>
                                 <p class="text-secondary mb-0" style="line-height: 1.75;">
                                     El fresno es un árbol que se adapta a cualquier ambiente y tipo de suelo. Suele distribuirse por las riberas de los ríos y zonas húmedas, pero también puede verse en las montañas. Y es que este árbol aguanta muy bien el frío invierno siendo capaz de vivir entre los 80 y 100 años.

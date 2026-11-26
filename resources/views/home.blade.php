@@ -29,7 +29,7 @@
         }
 
         .frame {
-            font-family: 'Manison';
+            font-family: 'Manison', sans-serif;
             color: white;
             text-align: center;
         }
@@ -37,11 +37,14 @@
         .hero-verde {
             background: linear-gradient(180deg, #064023 0%, #245c2a 50%, #447233 100%);
             min-height: 100vh;
+            min-height: 100dvh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding-top: 80px;
+            padding-bottom: 40px;
         }
 
         .navbar-nav .nav-link {
@@ -102,34 +105,32 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-
-            width: min(100%, 950px);
-            height: 100%;
-
+            width: auto;
+            max-width: 920px;
+            height: 88%;
+            max-height: 850px;
             object-fit: contain;
             object-position: center bottom;
-
-            opacity: 0.65;
+            opacity: 0.55;
             z-index: 1;
             pointer-events: none;
         }
 
         .capa-texto {
             position: relative;
-            z-index: 2;
+            z-index: 5;
             padding: 0 15px;
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .arbol {
-                height: 75vh;
-                bottom: -2vh;
+                width: 115%;
+                max-width: none;
+                height: auto;
+                max-height: 72dvh;
+                bottom: 0;
+                opacity: 0.45;
             }
-        }
-
-        .capa-texto {
-            position: relative !important;
-            z-index: 5 !important;
         }
 
         .galeria-item {
@@ -139,7 +140,6 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background-color: #f4f9f5;
             cursor: pointer;
-            /* Indica que se puede hacer clic */
         }
 
         .galeria-item:hover {
