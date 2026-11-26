@@ -107,25 +107,31 @@
 
 <body>
     <!-- Barra de navegación -->
-    <nav id="mainNav" class="navbar navbar-dark fixed-top py-3">
-        <div class="container justify-content-center">
-            <ul class="navbar-nav flex-row flex-wrap justify-content-center gap-3 gap-lg-4 text-center align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link active border-bottom border-2 border-light" href="{{ route('problematica') }}">Problemática</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('flora') }}">Plantas y suelos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('inicio') }}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('solucion') }}">Soluciones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold px-3 py-1 border border-light rounded-pill" href="{{ route('nosotros') }}">Sobre nosotros</a>
-                </li>
-            </ul>
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWireframe" aria-controls="navbarWireframe" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarWireframe">
+                <ul class="navbar-nav gap-lg-4 text-center align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active border-bottom border-2 border-light" href="{{ route('problematica') }}">Problemática</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('flora') }}">Plantas y suelos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('inicio') }}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('solucion') }}">Soluciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold px-3 py-1 border border-light rounded-pill" href="{{ route('nosotros') }}">Sobre nosotros</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -483,6 +489,8 @@
             </div>
         </div>
     </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
