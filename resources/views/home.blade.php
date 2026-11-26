@@ -10,11 +10,11 @@
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous" />
+        crossorigin="anonymous">
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap"
-        rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Estilos personalizados -->
     <style>
@@ -40,6 +40,8 @@
             width: 100%;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .navbar-nav .nav-link {
@@ -97,15 +99,25 @@
 
         .arbol {
             position: absolute;
-            bottom: -3vh;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            height: 96vh;
-            width: auto;
-            max-width: none;
-            z-index: 0 !important;
-            opacity: 0.45;
+
+            width: min(100%, 950px);
+            height: 100%;
+
+            object-fit: contain;
+            object-position: center bottom;
+
+            opacity: 0.65;
+            z-index: 1;
             pointer-events: none;
+        }
+
+        .capa-texto {
+            position: relative;
+            z-index: 2;
+            padding: 0 15px;
         }
 
         @media (max-width: 576px) {
@@ -154,8 +166,8 @@
 
 <body>
     <!-- Encabezado principal -->
-    <header class="hero-verde d-flex justify-content-center align-items-center text-center min-vh-100 position-relative overflow-hidden">
-        <img src="{{ asset('/images/tree.png') }}" alt="Árbol de fondo" class="arbol">
+    <header class="hero-verde d-flex justify-content-center align-items-center text-center position-relative overflow-hidden">
+        <img src="{{ asset('images/tree.png') }}" alt="" class="arbol" aria-hidden="true">
 
         <!-- Barra de navegación -->
         <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top py-4">

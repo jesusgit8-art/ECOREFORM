@@ -71,6 +71,19 @@
         #plantas-ideales {
             scroll-margin-top: 85px;
         }
+
+        .imagen-flora {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border: 6px solid #ffffff;
+        }
+
+        @media (max-width: 576px) {
+            .imagen-flora {
+                height: 250px;
+            }
+        }
     </style>
 </head>
 
@@ -289,8 +302,8 @@
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                             <div class="card-body">
-                                <div class="col-lg-5 text-center">
-                                    <img src="{{ asset('/images/lavanda.png') }}" alt="Lavanda" class="img-fluid rounded-4 shadow-lg" style="max-width: 480px; height: 480px; object-fit: cover; border: 6px solid #ffffff;">
+                                <div class="text-center mb-4">
+                                    <img src="{{ asset('/images/lavanda.png') }}" alt="Lavanda" class="img-fluid rounded-4 shadow-lg imagen-flora">
                                 </div>
                                 <br>
                                 <h3 class="h5 fw-bold text-uppercase mb-3" style="color: #19692c;">La Lavanda</h3>
@@ -305,8 +318,8 @@
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                             <div class="card-body">
-                                <div class="col-lg-5 text-center">
-                                    <img src="{{ asset('/images/cactus.png') }}" alt="Cactus" class="img-fluid rounded-4 shadow-lg" style="max-width: 480px; height: 480px; object-fit: cover; border: 6px solid #ffffff;">
+                                <div class="text-center mb-4">
+                                    <img src="{{ asset('/images/cactus.png') }}" alt="Cactus" class="img-fluid rounded-4 shadow-lg imagen-flora">
                                 </div>
                                 <br>
                                 <h3 class="h5 fw-bold text-uppercase mb-3" style="color: #19692c;">El Cactus</h3>
@@ -321,8 +334,8 @@
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                             <div class="card-body">
-                                <div class="col-lg-5 text-center">
-                                    <img src="{{ asset('/images/verbena.png') }}" alt="Verbena" class="img-fluid rounded-4 shadow-lg" style="max-width: 480px; height: 480px; object-fit: cover; border: 6px solid #ffffff;">
+                                <div class="text-center mb-4">
+                                    <img src="{{ asset('/images/verbena.png') }}" alt="Verbena" class="img-fluid rounded-4 shadow-lg imagen-flora">
                                 </div>
                                 <br>
                                 <h3 class="h5 fw-bold text-uppercase mb-3" style="color: #19692c;">La Verbena</h3>
@@ -337,8 +350,8 @@
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                             <div class="card-body">
-                                <div class="col-lg-5 text-center">
-                                    <img src="{{ asset('/images/agave.png') }}" alt="Agave" class="img-fluid rounded-4 shadow-lg" style="max-width: 480px; height: 480px; object-fit: cover; border: 6px solid #ffffff;">
+                                <div class="text-center mb-4">
+                                    <img src="{{ asset('/images/agave.png') }}" alt="Agave" class="img-fluid rounded-4 shadow-lg imagen-flora">
                                 </div>
                                 <br>
                                 <h3 class="h5 fw-bold text-uppercase mb-3" style="color: #19692c;">El Agave</h3>
@@ -364,9 +377,8 @@
                     <div class="col-lg-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                             <div class="card-body">
-                                <div class="col-lg-5 text-center">
-                                    <img src="{{ asset('/images/fresno.png') }}" alt="Fresno" class="img-fluid rounded-4 shadow-lg" style="max-width: 480px; height: 480px; object-fit: cover; border: 6px solid #ffffff;">
-                                </div>
+                                <div class="text-center mb-4">
+                                    <img src="{{ asset('/images/fresno.png') }}" alt="Fresno" class="img-fluid rounded-4 shadow-lg imagen-flora">
                                 <br>
                                 <h4 class="h5 fw-bold text-uppercase mb-3" style="color: #064023;">Fresno</h4>
                                 <p class="text-secondary mb-0" style="line-height: 1.75;">
@@ -380,8 +392,8 @@
                     <div class="col-lg-6">
                         <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                             <div class="card-body">
-                                <div class="col-lg-5 text-center">
-                                    <img src="{{ asset('/images/jacaranda.png') }}" alt="Jacaranda" class="img-fluid rounded-4 shadow-lg" style="max-width: 480px; height: 480px; object-fit: cover; border: 6px solid #ffffff;">
+                                <div class="text-center mb-4">
+                                    <img src="{{ asset('/images/jacaranda.png') }}" alt="Jacaranda" class="img-fluid rounded-4 shadow-lg imagen-flora">
                                 </div>
                                 <br>
                                 <h4 class="h5 fw-bold text-uppercase mb-3" style="color: #064023;">Jacaranda</h4>
