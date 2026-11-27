@@ -336,31 +336,22 @@
                             </div>
                         </div>
 
-                        <!-- Visor emergente (Modal) sin JS personalizado -->
+                        <!-- Visor emergente -->
                         <div class="modal fade" id="modalFoto{{ $i }}" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content bg-transparent border-0">
                                     <div class="modal-body p-0 position-relative text-center">
-                                        <div class="modal fade" id="modalFoto{{ $i }}" tabindex="-1" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                                <div class="modal-content bg-transparent border-0">
-                                                    <div class="modal-body p-0 position-relative text-center">
-                                                        <button type="button"
-                                                            class="btn btn-dark rounded-pill px-3 py-1 fw-bold position-absolute top-0 end-0 m-3 shadow"
-                                                            data-bs-dismiss="modal"
-                                                            aria-label="Cerrar"
-                                                            style="background-color: rgba(6, 64, 35, 0.92); border: 2px solid #ffffff;">
-                                                            Cerrar ✕
-                                                        </button>
-                                                        <img src="{{ asset('/images/gallery/plantel' . $i . '.jpg') }}"
-                                                            class="img-fluid rounded-4 shadow-lg"
-                                                            alt="Galería CBTA 35 - {{ $i }}"
-                                                            style="max-height: 85vh;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('/images/gallery/plantel' . $i . '.jpg') }}" class="img-fluid rounded-4 shadow-lg" alt="Galería CBTA 35 - {{ $i }}" style="max-height: 85vh;">
+                                        <button type="button"
+                                            class="btn btn-dark rounded-pill px-3 py-1 fw-bold position-absolute top-0 end-0 m-3 shadow"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Cerrar"
+                                            style="background-color: rgba(6, 64, 35, 0.92); border: 2px solid #ffffff; z-index: 10;">
+                                            Cerrar ✕
+                                        </button>
+                                        <img src="{{ asset('/images/gallery/plantel' . $i . '.jpg') }}"
+                                            class="img-fluid rounded-4 shadow-lg"
+                                            alt="Galería CBTA 35 - {{ $i }}"
+                                            style="max-height: 85vh;">
                                     </div>
                                 </div>
                             </div>
