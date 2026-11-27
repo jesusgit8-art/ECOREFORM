@@ -462,7 +462,7 @@
                     <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
                         Proyecto Escolar Comunitario (PEC) • Reforestación y Educación Ambiental.
                     </p>
-                    <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-1">
+                    <a href="#" class="btn btn-sm btn-light rounded-pill px-3 mt-1 fw-bold" style="color: #064023;">
                         Subir ↑
                     </a>
                 </div>

@@ -29,7 +29,7 @@
         }
 
         .frame {
-            font-family: 'Manison', sans-serif;
+            font-family: 'Manison';
             color: white;
             text-align: center;
         }
@@ -341,7 +341,25 @@
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content bg-transparent border-0">
                                     <div class="modal-body p-0 position-relative text-center">
-                                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 bg-dark rounded-circle p-2 opacity-75" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                        <div class="modal fade" id="modalFoto{{ $i }}" tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                <div class="modal-content bg-transparent border-0">
+                                                    <div class="modal-body p-0 position-relative text-center">
+                                                        <button type="button"
+                                                            class="btn btn-dark rounded-pill px-3 py-1 fw-bold position-absolute top-0 end-0 m-3 shadow"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Cerrar"
+                                                            style="background-color: rgba(6, 64, 35, 0.92); border: 2px solid #ffffff;">
+                                                            Cerrar ✕
+                                                        </button>
+                                                        <img src="{{ asset('/images/gallery/plantel' . $i . '.jpg') }}"
+                                                            class="img-fluid rounded-4 shadow-lg"
+                                                            alt="Galería CBTA 35 - {{ $i }}"
+                                                            style="max-height: 85vh;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <img src="{{ asset('/images/gallery/plantel' . $i . '.jpg') }}" class="img-fluid rounded-4 shadow-lg" alt="Galería CBTA 35 - {{ $i }}" style="max-height: 85vh;">
                                     </div>
                                 </div>
@@ -385,7 +403,7 @@
                         <p class="small mb-2" style="color: rgba(255, 255, 255, 0.8);">
                             Proyecto Escolar Comunitario (PEC) • Reforestación y Educación Ambiental.
                         </p>
-                        <a href="#contenido" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-1">
+                        <a href="#" class="btn btn-sm btn-light rounded-pill px-3 mt-1 fw-bold" style="color: #064023;">
                             Subir ↑
                         </a>
                     </div>
